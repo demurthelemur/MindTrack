@@ -51,23 +51,4 @@ struct LandingPage_Previews: PreviewProvider {
     }
 }
 
-struct BigBlueButton: View {
-    
-    let action: () -> Void
-    let buttonText: String
-    
-    var body: some View {
-        Button(action: action) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.blue)
-                    .frame(width: 250, height: 60)
-                
-                Text(buttonText)
-                    .foregroundColor(.white)
-                    .frame(width: 250)
-                    .padding()
-            }
-        }
-    }
-}
+

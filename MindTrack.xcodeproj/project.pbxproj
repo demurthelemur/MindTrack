@@ -14,6 +14,8 @@
 		A061F1772A994125002BC536 /* MindTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061F1762A994125002BC536 /* MindTrackUITests.swift */; };
 		A061F1792A994125002BC536 /* MindTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061F1782A994125002BC536 /* MindTrackUITestsLaunchTests.swift */; };
 		A0A2C3502AAB35AD00B40487 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C34F2AAB35AD00B40487 /* LandingPage.swift */; };
+		A0A2C3562AAB3DA400B40487 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C3552AAB3DA400B40487 /* LoginPageView.swift */; };
+		A0A2C35A2AAB3DC300B40487 /* Big Blue Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C3592AAB3DC300B40487 /* Big Blue Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		A061F1762A994125002BC536 /* MindTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTrackUITests.swift; sourceTree = "<group>"; };
 		A061F1782A994125002BC536 /* MindTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A0A2C34F2AAB35AD00B40487 /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
+		A0A2C3552AAB3DA400B40487 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		A0A2C3592AAB3DC300B40487 /* Big Blue Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Big Blue Button.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		A061F15A2A994124002BC536 /* MindTrack */ = {
 			isa = PBXGroup;
 			children = (
+				A0A2C3572AAB3DAE00B40487 /* UIElements */,
+				A0A2C3542AAB3D9300B40487 /* Login Page */,
 				A0A2C34C2AAB358200B40487 /* Landing Page */,
 				A061F15B2A994124002BC536 /* MindTrackApp.swift */,
 				A061F15F2A994125002BC536 /* Assets.xcassets */,
@@ -133,6 +139,22 @@
 				A0A2C34F2AAB35AD00B40487 /* LandingPage.swift */,
 			);
 			path = "Landing Page";
+			sourceTree = "<group>";
+		};
+		A0A2C3542AAB3D9300B40487 /* Login Page */ = {
+			isa = PBXGroup;
+			children = (
+				A0A2C3552AAB3DA400B40487 /* LoginPageView.swift */,
+			);
+			path = "Login Page";
+			sourceTree = "<group>";
+		};
+		A0A2C3572AAB3DAE00B40487 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				A0A2C3592AAB3DC300B40487 /* Big Blue Button.swift */,
+			);
+			path = UIElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +289,8 @@
 			files = (
 				A0A2C3502AAB35AD00B40487 /* LandingPage.swift in Sources */,
 				A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */,
+				A0A2C35A2AAB3DC300B40487 /* Big Blue Button.swift in Sources */,
+				A0A2C3562AAB3DA400B40487 /* LoginPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
