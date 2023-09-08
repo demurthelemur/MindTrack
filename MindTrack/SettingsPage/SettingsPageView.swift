@@ -9,7 +9,48 @@ import SwiftUI
 
 struct SettingsPageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                NavigationLink {
+                    Text("Destination")
+                } label: {
+                    HStack {
+                        Image(systemName: "pawprint.fill")
+                        Text("Change Pet Type")
+                    }
+                }
+                
+                NavigationLink {
+                    Text("Change Quiz Timing")
+                } label: {
+                    HStack {
+                        Image(systemName: "clock.fill")
+                        Text("Change Quiz Timing")
+                    }
+                }
+                
+                NavigationLink {
+                    Text("Change Quiz Timing")
+                } label: {
+                    HStack {
+                        Image(systemName: "person.fill")
+                        Text("Account Settings")
+                    }
+                }
+                
+                Spacer()
+                
+
+
+            }
+            .navigationTitle("Settings")
+            
+            BigButtonWithCustomColor(action: logOutButtonClicked, buttonText: "Log Out", color: Color.red)
+        }
+    }
+    
+    private func logOutButtonClicked() {
+        
     }
 }
 
