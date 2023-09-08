@@ -13,7 +13,7 @@ struct LandingPage: View {
             
             Image("Logo")
                 .resizable()
-                .border(.blue, width: 6)
+                .border(.cyan, width: 6)
                 .padding()
                 .frame(width: .infinity, height: 450)
             
