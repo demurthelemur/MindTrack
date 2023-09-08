@@ -9,12 +9,65 @@ import SwiftUI
 
 struct LandingPage: View {
     var body: some View {
-        Image("Logo")
+        VStack(alignment: .center){
+            
+            Image("Logo")
+                .resizable()
+                .border(.blue, width: 6)
+                .padding()
+                .frame(width: .infinity, height: 450)
+            
+            Text("Welcome to Mindtrack")
+                .font(.title)
+                .bold()
+                .padding(.bottom, 7)
+            
+            Text("Please Login or Register to continue")
+                .font(.subheadline)
+                .padding(.bottom, 15)
+            
+            BigBlueButton(action: loginClicked, buttonText: "Login")
+                .padding(.bottom)
+            
+            BigBlueButton(action: registerClicked, buttonText: "Register")
+            
+            Spacer()
+        }
     }
+    
+    func registerClicked() {
+        
+    }
+    
+    func loginClicked() {
+        
+    }
+    
 }
 
 struct LandingPage_Previews: PreviewProvider {
     static var previews: some View {
         LandingPage()
+    }
+}
+
+struct BigBlueButton: View {
+    
+    let action: () -> Void
+    let buttonText: String
+    
+    var body: some View {
+        Button(action: action) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.blue)
+                    .frame(width: 250, height: 60)
+                
+                Text(buttonText)
+                    .foregroundColor(.white)
+                    .frame(width: 250)
+                    .padding()
+            }
+        }
     }
 }
