@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061F15B2A994124002BC536 /* MindTrackApp.swift */; };
-		A061F15E2A994124002BC536 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061F15D2A994124002BC536 /* ContentView.swift */; };
 		A061F1602A994125002BC536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A061F15F2A994125002BC536 /* Assets.xcassets */; };
 		A061F1632A994125002BC536 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A061F1622A994125002BC536 /* Preview Assets.xcassets */; };
 		A061F16D2A994125002BC536 /* MindTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061F16C2A994125002BC536 /* MindTrackTests.swift */; };
 		A061F1772A994125002BC536 /* MindTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061F1762A994125002BC536 /* MindTrackUITests.swift */; };
 		A061F1792A994125002BC536 /* MindTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061F1782A994125002BC536 /* MindTrackUITestsLaunchTests.swift */; };
+		A0A2C3502AAB35AD00B40487 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C34F2AAB35AD00B40487 /* LandingPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		A061F1582A994124002BC536 /* MindTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A061F15B2A994124002BC536 /* MindTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTrackApp.swift; sourceTree = "<group>"; };
-		A061F15D2A994124002BC536 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A061F15F2A994125002BC536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A061F1622A994125002BC536 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A061F1682A994125002BC536 /* MindTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,7 @@
 		A061F1722A994125002BC536 /* MindTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A061F1762A994125002BC536 /* MindTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTrackUITests.swift; sourceTree = "<group>"; };
 		A061F1782A994125002BC536 /* MindTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A0A2C34F2AAB35AD00B40487 /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,8 @@
 		A061F15A2A994124002BC536 /* MindTrack */ = {
 			isa = PBXGroup;
 			children = (
+				A0A2C34C2AAB358200B40487 /* Landing Page */,
 				A061F15B2A994124002BC536 /* MindTrackApp.swift */,
-				A061F15D2A994124002BC536 /* ContentView.swift */,
 				A061F15F2A994125002BC536 /* Assets.xcassets */,
 				A061F1612A994125002BC536 /* Preview Content */,
 			);
@@ -125,6 +125,14 @@
 				A061F1782A994125002BC536 /* MindTrackUITestsLaunchTests.swift */,
 			);
 			path = MindTrackUITests;
+			sourceTree = "<group>";
+		};
+		A0A2C34C2AAB358200B40487 /* Landing Page */ = {
+			isa = PBXGroup;
+			children = (
+				A0A2C34F2AAB35AD00B40487 /* LandingPage.swift */,
+			);
+			path = "Landing Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A061F15E2A994124002BC536 /* ContentView.swift in Sources */,
+				A0A2C3502AAB35AD00B40487 /* LandingPage.swift in Sources */,
 				A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
