@@ -27,31 +27,10 @@ struct LoginPageView: View {
                 .bold()
                 .padding()
             
-            VStack(alignment: .leading) {
-                Text("Enter your email")
-                    .font(.subheadline)
-                HStack {
-                    Image(systemName: "envelope.fill")
-                    TextField("Email...", text: $email)
-                }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .autocapitalization(.none)
-                .foregroundColor(.black)
-            }
-            .padding(.horizontal)
+            CustomTextField(binding: $email, text: "Enter your email", textFieldText: "Email", imageName: "envelope.fill")
             
-            VStack(alignment: .leading) {
-                Text("Enter your Password")
-                    .font(.subheadline)
-                HStack {
-                    Image(systemName: "lock.fill")
-                    SecureField("Password...", text: $password)
-                }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .autocapitalization(.none)
-                .foregroundColor(.black)
-            }
-            .padding()
+            CustomPasswordField(binding: $password, text: "Enter your Password", textFieldText: "Password...", imageName: "lock.fill")
+                .padding(.vertical)
             
             Spacer()
             
