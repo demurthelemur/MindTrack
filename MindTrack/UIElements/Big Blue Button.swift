@@ -27,3 +27,25 @@ struct BigBlueButton: View {
         }
     }
 }
+
+struct BigButtonWithCustomColor: View {
+    
+    let action: () -> Void
+    let buttonText: String
+    let color: Color
+    
+    var body: some View {
+        Button(action: action) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(color)
+                    .frame(width: 250, height: 60)
+                
+                Text(buttonText)
+                    .foregroundColor(.white)
+                    .frame(width: 250)
+                    .padding()
+            }
+        }
+    }
+}
