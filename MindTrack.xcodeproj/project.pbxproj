@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A03F2CA52AAB9ABB00032182 /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */; };
+		A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */; };
 		A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061F15B2A994124002BC536 /* MindTrackApp.swift */; };
 		A061F1602A994125002BC536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A061F15F2A994125002BC536 /* Assets.xcassets */; };
 		A061F1632A994125002BC536 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A061F1622A994125002BC536 /* Preview Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
+		A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		A061F1582A994124002BC536 /* MindTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A061F15B2A994124002BC536 /* MindTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTrackApp.swift; sourceTree = "<group>"; };
 		A061F15F2A994125002BC536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A03F2CA32AAB9AA800032182 /* RegisterPage */ = {
+			isa = PBXGroup;
+			children = (
+				A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */,
+			);
+			path = RegisterPage;
+			sourceTree = "<group>";
+		};
 		A061F14F2A994124002BC536 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		A061F15A2A994124002BC536 /* MindTrack */ = {
 			isa = PBXGroup;
 			children = (
+				A03F2CA32AAB9AA800032182 /* RegisterPage */,
 				A0A2C3572AAB3DAE00B40487 /* UIElements */,
 				A0A2C3542AAB3D9300B40487 /* Login Page */,
 				A0A2C34C2AAB358200B40487 /* Landing Page */,
@@ -156,6 +169,7 @@
 			children = (
 				A0A2C3592AAB3DC300B40487 /* Big Blue Button.swift */,
 				A0A2C35D2AAB5A0700B40487 /* CustomTextFields.swift */,
+				A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -292,9 +306,11 @@
 			files = (
 				A0A2C3502AAB35AD00B40487 /* LandingPageView.swift in Sources */,
 				A0A2C35E2AAB5A0700B40487 /* CustomTextFields.swift in Sources */,
+				A03F2CA52AAB9ABB00032182 /* RegisterPageView.swift in Sources */,
 				A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */,
 				A0A2C35A2AAB3DC300B40487 /* Big Blue Button.swift in Sources */,
 				A0A2C3562AAB3DA400B40487 /* LoginPageView.swift in Sources */,
+				A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
