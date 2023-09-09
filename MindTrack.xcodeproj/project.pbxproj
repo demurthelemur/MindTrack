@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A01140B72AABB33000FA08FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140B62AABB33000FA08FC /* User.swift */; };
 		A01140BA2AAC803A00FA08FC /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140B92AAC803A00FA08FC /* FriendsListView.swift */; };
+		A01140BD2AAC849D00FA08FC /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140BC2AAC849D00FA08FC /* IntroductionView.swift */; };
+		A01140BF2AAC84B200FA08FC /* FriendsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140BE2AAC84B200FA08FC /* FriendsListItem.swift */; };
 		A03F2CA52AAB9ABB00032182 /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */; };
 		A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */; };
 		A03F2CAB2AABA25800032182 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CAA2AABA25800032182 /* SettingsPageView.swift */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		A01140B62AABB33000FA08FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A01140B92AAC803A00FA08FC /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
+		A01140BC2AAC849D00FA08FC /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
+		A01140BE2AAC84B200FA08FC /* FriendsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListItem.swift; sourceTree = "<group>"; };
 		A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
 		A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		A03F2CAA2AABA25800032182 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,14 @@
 			path = FriendsList;
 			sourceTree = "<group>";
 		};
+		A01140BB2AAC847A00FA08FC /* IntroductionPage */ = {
+			isa = PBXGroup;
+			children = (
+				A01140BC2AAC849D00FA08FC /* IntroductionView.swift */,
+			);
+			path = IntroductionPage;
+			sourceTree = "<group>";
+		};
 		A03F2CA32AAB9AA800032182 /* RegisterPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +168,7 @@
 				A03F2CA32AAB9AA800032182 /* RegisterPage */,
 				A0A2C3542AAB3D9300B40487 /* Login Page */,
 				A0A2C34C2AAB358200B40487 /* Landing Page */,
+				A01140BB2AAC847A00FA08FC /* IntroductionPage */,
 				A01140B82AAC802700FA08FC /* FriendsList */,
 				A061F1612A994125002BC536 /* Preview Content */,
 				A061F15B2A994124002BC536 /* MindTrackApp.swift */,
@@ -211,6 +224,7 @@
 				A0A2C3592AAB3DC300B40487 /* Big Blue Button.swift */,
 				A0A2C35D2AAB5A0700B40487 /* CustomTextFields.swift */,
 				A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */,
+				A01140BE2AAC84B200FA08FC /* FriendsListItem.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -352,8 +366,10 @@
 				A01140BA2AAC803A00FA08FC /* FriendsListView.swift in Sources */,
 				A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */,
 				A01140B72AABB33000FA08FC /* User.swift in Sources */,
+				A01140BD2AAC849D00FA08FC /* IntroductionView.swift in Sources */,
 				A0A2C35A2AAB3DC300B40487 /* Big Blue Button.swift in Sources */,
 				A0A2C3562AAB3DA400B40487 /* LoginPageView.swift in Sources */,
+				A01140BF2AAC84B200FA08FC /* FriendsListItem.swift in Sources */,
 				A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
