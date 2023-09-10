@@ -11,6 +11,8 @@
 		A01140BA2AAC803A00FA08FC /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140B92AAC803A00FA08FC /* FriendsListView.swift */; };
 		A01140BD2AAC849D00FA08FC /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140BC2AAC849D00FA08FC /* IntroductionView.swift */; };
 		A01140BF2AAC84B200FA08FC /* FriendsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140BE2AAC84B200FA08FC /* FriendsListItem.swift */; };
+		A01140C22AAE0EBF00FA08FC /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140C12AAE0EBF00FA08FC /* MainPageView.swift */; };
+		A01140C42AAE113200FA08FC /* AppToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140C32AAE113200FA08FC /* AppToolbar.swift */; };
 		A03F2CA52AAB9ABB00032182 /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */; };
 		A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */; };
 		A03F2CAB2AABA25800032182 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CAA2AABA25800032182 /* SettingsPageView.swift */; };
@@ -48,6 +50,8 @@
 		A01140B92AAC803A00FA08FC /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
 		A01140BC2AAC849D00FA08FC /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		A01140BE2AAC84B200FA08FC /* FriendsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListItem.swift; sourceTree = "<group>"; };
+		A01140C12AAE0EBF00FA08FC /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		A01140C32AAE113200FA08FC /* AppToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolbar.swift; sourceTree = "<group>"; };
 		A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
 		A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		A03F2CAA2AABA25800032182 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
@@ -115,6 +119,14 @@
 			path = IntroductionPage;
 			sourceTree = "<group>";
 		};
+		A01140C02AAE0E5700FA08FC /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				A01140C12AAE0EBF00FA08FC /* MainPageView.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
 		A03F2CA32AAB9AA800032182 /* RegisterPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +176,7 @@
 				A01140B52AABB32000FA08FC /* Models */,
 				A03F2CA92AABA20C00032182 /* Utilities */,
 				A0A2C3572AAB3DAE00B40487 /* UIElements */,
+				A01140C02AAE0E5700FA08FC /* MainPage */,
 				A03F2CA82AABA20000032182 /* SettingsPage */,
 				A03F2CA32AAB9AA800032182 /* RegisterPage */,
 				A0A2C3542AAB3D9300B40487 /* Login Page */,
@@ -225,6 +238,7 @@
 				A0A2C35D2AAB5A0700B40487 /* CustomTextFields.swift */,
 				A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */,
 				A01140BE2AAC84B200FA08FC /* FriendsListItem.swift */,
+				A01140C32AAE113200FA08FC /* AppToolbar.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -366,11 +380,13 @@
 				A01140BA2AAC803A00FA08FC /* FriendsListView.swift in Sources */,
 				A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */,
 				A01140B72AABB33000FA08FC /* User.swift in Sources */,
+				A01140C42AAE113200FA08FC /* AppToolbar.swift in Sources */,
 				A01140BD2AAC849D00FA08FC /* IntroductionView.swift in Sources */,
 				A0A2C35A2AAB3DC300B40487 /* Big Blue Button.swift in Sources */,
 				A0A2C3562AAB3DA400B40487 /* LoginPageView.swift in Sources */,
 				A01140BF2AAC84B200FA08FC /* FriendsListItem.swift in Sources */,
 				A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */,
+				A01140C22AAE0EBF00FA08FC /* MainPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
