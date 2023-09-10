@@ -26,6 +26,8 @@ struct QuizView: View {
                         }
                     }
                 }
+                .padding()
+                .background(Color.gray.opacity(0.1))
             }
             BigButtonWithCustomColor(action: submitQuestions, buttonText: "Submit", color: Color.red)
         }
