@@ -13,6 +13,10 @@
 		A01140BF2AAC84B200FA08FC /* FriendsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140BE2AAC84B200FA08FC /* FriendsListItem.swift */; };
 		A01140C22AAE0EBF00FA08FC /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140C12AAE0EBF00FA08FC /* MainPageView.swift */; };
 		A01140C42AAE113200FA08FC /* AppToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140C32AAE113200FA08FC /* AppToolbar.swift */; };
+		A01140C72AAE143900FA08FC /* RadioButtonQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140C62AAE143900FA08FC /* RadioButtonQuestion.swift */; };
+		A01140C92AAE17BF00FA08FC /* SliderQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140C82AAE17BF00FA08FC /* SliderQuestion.swift */; };
+		A01140CC2AAE1E2200FA08FC /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140CB2AAE1E2200FA08FC /* QuizView.swift */; };
+		A01140CE2AAE1E5100FA08FC /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140CD2AAE1E5100FA08FC /* QuestionModel.swift */; };
 		A03F2CA52AAB9ABB00032182 /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */; };
 		A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */; };
 		A03F2CAB2AABA25800032182 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CAA2AABA25800032182 /* SettingsPageView.swift */; };
@@ -52,6 +56,10 @@
 		A01140BE2AAC84B200FA08FC /* FriendsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListItem.swift; sourceTree = "<group>"; };
 		A01140C12AAE0EBF00FA08FC /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		A01140C32AAE113200FA08FC /* AppToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolbar.swift; sourceTree = "<group>"; };
+		A01140C62AAE143900FA08FC /* RadioButtonQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonQuestion.swift; sourceTree = "<group>"; };
+		A01140C82AAE17BF00FA08FC /* SliderQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderQuestion.swift; sourceTree = "<group>"; };
+		A01140CB2AAE1E2200FA08FC /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		A01140CD2AAE1E5100FA08FC /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
 		A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		A03F2CAA2AABA25800032182 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				A01140B62AABB33000FA08FC /* User.swift */,
+				A01140CD2AAE1E5100FA08FC /* QuestionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -125,6 +134,23 @@
 				A01140C12AAE0EBF00FA08FC /* MainPageView.swift */,
 			);
 			path = MainPage;
+			sourceTree = "<group>";
+		};
+		A01140C52AAE141B00FA08FC /* QuizQuestionTypes */ = {
+			isa = PBXGroup;
+			children = (
+				A01140C62AAE143900FA08FC /* RadioButtonQuestion.swift */,
+				A01140C82AAE17BF00FA08FC /* SliderQuestion.swift */,
+			);
+			path = QuizQuestionTypes;
+			sourceTree = "<group>";
+		};
+		A01140CA2AAE1E0700FA08FC /* QuizPage */ = {
+			isa = PBXGroup;
+			children = (
+				A01140CB2AAE1E2200FA08FC /* QuizView.swift */,
+			);
+			path = QuizPage;
 			sourceTree = "<group>";
 		};
 		A03F2CA32AAB9AA800032182 /* RegisterPage */ = {
@@ -181,6 +207,7 @@
 				A03F2CA32AAB9AA800032182 /* RegisterPage */,
 				A0A2C3542AAB3D9300B40487 /* Login Page */,
 				A0A2C34C2AAB358200B40487 /* Landing Page */,
+				A01140CA2AAE1E0700FA08FC /* QuizPage */,
 				A01140BB2AAC847A00FA08FC /* IntroductionPage */,
 				A01140B82AAC802700FA08FC /* FriendsList */,
 				A061F1612A994125002BC536 /* Preview Content */,
@@ -234,6 +261,7 @@
 		A0A2C3572AAB3DAE00B40487 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				A01140C52AAE141B00FA08FC /* QuizQuestionTypes */,
 				A0A2C3592AAB3DC300B40487 /* Big Blue Button.swift */,
 				A0A2C35D2AAB5A0700B40487 /* CustomTextFields.swift */,
 				A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */,
@@ -383,9 +411,13 @@
 				A01140C42AAE113200FA08FC /* AppToolbar.swift in Sources */,
 				A01140BD2AAC849D00FA08FC /* IntroductionView.swift in Sources */,
 				A0A2C35A2AAB3DC300B40487 /* Big Blue Button.swift in Sources */,
+				A01140C92AAE17BF00FA08FC /* SliderQuestion.swift in Sources */,
 				A0A2C3562AAB3DA400B40487 /* LoginPageView.swift in Sources */,
+				A01140C72AAE143900FA08FC /* RadioButtonQuestion.swift in Sources */,
 				A01140BF2AAC84B200FA08FC /* FriendsListItem.swift in Sources */,
 				A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */,
+				A01140CE2AAE1E5100FA08FC /* QuestionModel.swift in Sources */,
+				A01140CC2AAE1E2200FA08FC /* QuizView.swift in Sources */,
 				A01140C22AAE0EBF00FA08FC /* MainPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

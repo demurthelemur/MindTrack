@@ -40,7 +40,7 @@ struct LandingPage: View {
     }
     
     func loginClicked() {
-        
+
     }
     
 }
