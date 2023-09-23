@@ -11,7 +11,7 @@ import SwiftUI
 struct MindTrackApp: App {
     var body: some Scene {
         WindowGroup {
-            MainPageView()
+            StartupView()
         }
     }
 }

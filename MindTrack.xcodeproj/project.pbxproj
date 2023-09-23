@@ -20,6 +20,7 @@
 		A03F2CA52AAB9ABB00032182 /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */; };
 		A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */; };
 		A03F2CAB2AABA25800032182 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CAA2AABA25800032182 /* SettingsPageView.swift */; };
+		A04532342ABF534500DEB0D7 /* StartupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04532332ABF534500DEB0D7 /* StartupView.swift */; };
 		A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061F15B2A994124002BC536 /* MindTrackApp.swift */; };
 		A061F1602A994125002BC536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A061F15F2A994125002BC536 /* Assets.xcassets */; };
 		A061F1632A994125002BC536 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A061F1622A994125002BC536 /* Preview Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
 		A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		A03F2CAA2AABA25800032182 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
+		A04532332ABF534500DEB0D7 /* StartupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupView.swift; sourceTree = "<group>"; };
 		A061F1582A994124002BC536 /* MindTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A061F15B2A994124002BC536 /* MindTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTrackApp.swift; sourceTree = "<group>"; };
 		A061F15F2A994125002BC536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				A01140B82AAC802700FA08FC /* FriendsList */,
 				A061F1612A994125002BC536 /* Preview Content */,
 				A061F15B2A994124002BC536 /* MindTrackApp.swift */,
+				A04532332ABF534500DEB0D7 /* StartupView.swift */,
 				A061F15F2A994125002BC536 /* Assets.xcassets */,
 			);
 			path = MindTrack;
@@ -407,6 +410,7 @@
 				A03F2CA52AAB9ABB00032182 /* RegisterPageView.swift in Sources */,
 				A01140BA2AAC803A00FA08FC /* FriendsListView.swift in Sources */,
 				A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */,
+				A04532342ABF534500DEB0D7 /* StartupView.swift in Sources */,
 				A01140B72AABB33000FA08FC /* User.swift in Sources */,
 				A01140C42AAE113200FA08FC /* AppToolbar.swift in Sources */,
 				A01140BD2AAC849D00FA08FC /* IntroductionView.swift in Sources */,

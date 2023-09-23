@@ -12,6 +12,7 @@ struct LoginPageView: View {
     @State var email: String = ""
     @State var password: String = ""
     
+    @Binding var userState: Bool    
     var body: some View {
         VStack {
             Spacer()
@@ -34,20 +35,19 @@ struct LoginPageView: View {
             
             Spacer()
             
-            BigBlueButton(action:                 loginButtonPressed,
-                buttonText: "Login")
+            BigBlueButton(action: loginButtonPressed, buttonText: "Login")
             
             Spacer()
         }
     }
     
     func loginButtonPressed() {
-        
+        userState = true
     }
 }
 
-struct LoginPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginPageView()
-    }
-}
+//struct LoginPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginPageView()
+//    }
+//}

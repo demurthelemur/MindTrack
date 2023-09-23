@@ -8,47 +8,63 @@
 import SwiftUI
 
 struct LandingPage: View {
+    @Binding var userState: Bool
+    @Binding var path: NavigationPath
+    
     var body: some View {
-        VStack(alignment: .center){
+        NavigationStack(path: $path){
             
-            Image("Logo")
-                .resizable()
-                .border(.cyan, width: 6)
-                .padding()
-                .frame(width: .infinity, height: 450)
-            
-            Text("Welcome to Mindtrack")
-                .font(.title)
-                .bold()
-                .padding(.bottom, 7)
-            
-            Text("Please Login or Register to continue")
-                .font(.subheadline)
-                .padding(.bottom, 15)
-            
-            BigBlueButton(action: loginClicked, buttonText: "Login")
-                .padding(.bottom)
-            
-            BigBlueButton(action: registerClicked, buttonText: "Register")
-            
-            Spacer()
+            VStack(alignment: .center){
+                
+                Image("Logo")
+                    .resizable()
+                    .border(.cyan, width: 6)
+                    .padding()
+                    .frame(height: 450)
+                
+                Text("Welcome to Mindtrack")
+                    .font(.title)
+                    .bold()
+                    .padding(.bottom, 7)
+                
+                Text("Please Login or Register to continue")
+                    .font(.subheadline)
+                    .padding(.bottom, 15)
+                
+                BigBlueButton(action: loginClicked, buttonText: "Login")
+                    .padding(.bottom)
+                
+                BigBlueButton(action: registerClicked, buttonText: "Register")
+                
+                Spacer()
+            }
+            .navigationDestination(for: String.self) { view in
+                if view == "Login" {
+                    LoginPageView(userState: $userState)
+                } else if view == "Register" {
+                    RegisterPageView(userState: $userState, path: $path)
+                } else if view == "intro" {
+                    IntroductionView(userState: $userState)
+                }
+            }
         }
     }
     
-    func registerClicked() {
-        
-    }
-    
     func loginClicked() {
-
+        path.append("Login")
     }
+
     
-}
-
-struct LandingPage_Previews: PreviewProvider {
-    static var previews: some View {
-        LandingPage()
+    func registerClicked() {
+        path.append("Register")
     }
 }
+
+//struct LandingPage_Previews: PreviewProvider {
+//    @State var test: Bool
+//    static var previews: some View {
+//        LandingPage(userState: $test)
+//    }
+//}
 
 

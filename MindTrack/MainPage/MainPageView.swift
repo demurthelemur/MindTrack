@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct MainPageView: View {
+    
+    @State private var path = NavigationPath()
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             VStack(alignment: .center){
                 Image("Pikachu")
                     .resizable()
-                    .frame(width: .infinity, height: 350)
+                    .frame(height: 350)
                     .background(Color.yellow.opacity(0.3))
                     .overlay(
                         Rectangle()
@@ -31,6 +34,11 @@ struct MainPageView: View {
                     .padding(.bottom, 30)
                 
                 BigBlueButton(action: takeQuiz, buttonText: "Take Quiz!")
+                    .navigationDestination(for: String.self) { view in
+                        if view == "quizView" {
+                            QuizView()
+                        }
+                    }
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -41,7 +49,9 @@ struct MainPageView: View {
         }
     }
     
-    private func takeQuiz() {}
+    private func takeQuiz() {
+        path.append("quizView")
+    }
 }
 
 struct MainPageView_Previews: PreviewProvider {

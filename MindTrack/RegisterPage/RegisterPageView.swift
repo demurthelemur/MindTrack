@@ -14,7 +14,10 @@ struct RegisterPageView: View {
     @State var email: String = ""
     @State private var birthDate = Date.now
     @State var accepted: Bool = false
-     
+    
+    @Binding var userState: Bool
+    @Binding var path: NavigationPath
+    
     var body: some View {
         VStack {
             
@@ -57,14 +60,14 @@ struct RegisterPageView: View {
             Spacer()
             
             BigBlueButton(action: registerButtonClicked, buttonText: "Register")
-                .disabled(checkDisabled())
+            .disabled(checkDisabled())
+
         }
-        
     }
     
     private func registerButtonClicked() {
         let newUser = User(name: name, lastName: lastName, password: password, email: email, birthDate: birthDate)
-        print(newUser.name)
+        path.append("intro")
     }
     
     private func checkDisabled() -> Bool {
@@ -76,11 +79,11 @@ struct RegisterPageView: View {
     }
 }
 
-struct RegisterPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterPageView()
-    }
-}
-
+//struct RegisterPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegisterPageView()
+//    }
+//}
+//
 
 
