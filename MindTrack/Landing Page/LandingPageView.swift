@@ -61,10 +61,9 @@ struct LandingPage: View {
 }
 
 //struct LandingPage_Previews: PreviewProvider {
-//    @State var test: Bool
 //    static var previews: some View {
-//        LandingPage(userState: $test)
+//        LandingPage(userState: .constant(true), path: <#Binding<NavigationPath>#>)
 //    }
 //}
-
+//
 

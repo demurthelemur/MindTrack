@@ -10,11 +10,12 @@ import SwiftUI
 struct MainPageView: View {
     
     @State private var path = NavigationPath()
+    @StateObject var currentUser = User.devUser
     
     var body: some View {
         NavigationStack(path: $path) {
             VStack(alignment: .center){
-                Image("Pikachu")
+                Image(currentUser.petType)
                     .resizable()
                     .frame(height: 350)
                     .background(Color.yellow.opacity(0.3))
@@ -28,7 +29,7 @@ struct MainPageView: View {
                     .padding(.top)
                     .font(.title)
                 
-                Text("932")
+                Text("\(currentUser.points)")
                     .font(.largeTitle)
                     .bold()
                     .padding(.bottom, 30)
