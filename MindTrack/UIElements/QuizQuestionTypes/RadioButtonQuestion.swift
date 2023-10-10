@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct RadioButtonQuestion: View {
-    let Question: String
-    let AnswerOptions : [Answer]
-    @State var answerSelected: String = ""
+    let questionModel: QuestionModel
+    @Binding var impactPoint: Int
     
     var body: some View {
         VStack(alignment: .leading){
-            Text(Question)
+            Text(questionModel.Question)
                 .padding(.horizontal)
-            Picker("Label", selection: $answerSelected) {
-                ForEach(AnswerOptions, id: \.id) { answer in
-                    Text(answer.AnswerText).tag(answer.AnswerText)
+            Picker("Label", selection: $impactPoint) {
+                ForEach(questionModel.Answers!, id: \.id) { answer in
+                    Text(answer.AnswerText).tag(answer.impactPoint)
                 }
             }
             .pickerStyle(.inline)
@@ -27,8 +26,8 @@ struct RadioButtonQuestion: View {
     }
 }
 
-struct RadioButtonQuestion_Previews: PreviewProvider {
-    static var previews: some View {
-        RadioButtonQuestion(Question: "Placeholder Question", AnswerOptions: [Answer(AnswerText: "Good", impactPoint: 5), Answer(AnswerText: "Mid", impactPoint: 0), Answer(AnswerText: "Bad", impactPoint: -5)])
-    }
-}
+//struct RadioButtonQuestion_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RadioButtonQuestion(Question: "Placeholder Question", AnswerOptions: [Answer(AnswerText: "Good", impactPoint: 5), Answer(AnswerText: "Mid", impactPoint: 0), Answer(AnswerText: "Bad", impactPoint: -5)])
+//    }
+//}

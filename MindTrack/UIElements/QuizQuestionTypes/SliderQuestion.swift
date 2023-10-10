@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct SliderQuestion: View {
-    let Question: String
-    @State var selectedNumber: Double = 0
+    let questionModel: QuestionModel
+    @Binding var impactPoint: Double
+    
     var body: some View {
         VStack(alignment: .leading) {
             
-            Text(Question)
+            Text(questionModel.Question)
                 .padding(.horizontal)
             
-            Slider(value: $selectedNumber, in: 0...10, step: 1.0)
+            Slider(value: $impactPoint, in: 1...Double(questionModel.impact!), step: 1.0)
                 .padding(.horizontal)
             
             HStack(alignment: .center){
@@ -25,19 +26,19 @@ struct SliderQuestion: View {
             
                 Spacer()
                 
-                Text("Value: \(String(format: "%.f", selectedNumber))")
+                Text("Value: \(String(format: "%.f", impactPoint))")
                 
                 Spacer()
                 
-                Text("10")
-                    .padding(.trailing)
+                Text("\(questionModel.impact!)")
             }
         }
     }
 }
 
-struct SliderQuestion_Previews: PreviewProvider {
-    static var previews: some View {
-        SliderQuestion(Question: "Placeholder Question")
-    }
-}
+//
+//struct SliderQuestion_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SliderQuestion(Question: "Placeholder Question")
+//    }
+//}

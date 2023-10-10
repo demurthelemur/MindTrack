@@ -37,7 +37,7 @@ struct MainPageView: View {
                 BigBlueButton(action: takeQuiz, buttonText: "Take Quiz!")
                     .navigationDestination(for: String.self) { view in
                         if view == "quizView" {
-                            QuizView()
+                            QuizView(path: $path, currentUser: currentUser)
                         }
                     }
             }
