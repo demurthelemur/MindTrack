@@ -18,6 +18,7 @@ class User: ObservableObject, Codable {
     
     static var devUser = User(name: "demir", lastName: "dereli", password: "testpassword", email: "derelidemir123@gmail.com", petType: "Pikachu")
     
+    //Create a new user
     init(name: String, lastName: String, password: String, email: String, birthDate: Foundation.Date = Date.now, points: Int = 0, petType: String = "Pikachu") {
         self.name = name
         self.lastName = lastName
@@ -26,6 +27,19 @@ class User: ObservableObject, Codable {
         self.birthDate = birthDate
         self.points = points
         self.petType = petType
+    }
+    
+    var petState: String {
+        if petType == "Pikachu" {
+            if points < 0 {
+                return PikachuModel().pikachuBase
+            } else if points < 100 {
+                return PikachuModel().pikachuFirstEVO
+            } else {
+                return PikachuModel().pikachuSecondEVO
+            }
+        }
+        return "Charizard"
     }
     
     enum CodingKeys: CodingKey {

@@ -15,7 +15,7 @@ struct MainPageView: View {
     var body: some View {
         NavigationStack(path: $path) {
             VStack(alignment: .center){
-                Image(currentUser.petType)
+                Image(currentUser.petState)
                     .resizable()
                     .frame(height: 350)
                     .background(Color.yellow.opacity(0.3))
