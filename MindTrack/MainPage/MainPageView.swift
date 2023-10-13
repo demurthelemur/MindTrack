@@ -49,22 +49,28 @@ struct MainPageView: View {
                     AppToolbar()
                 }
             }
+        }.onAppear() {
+            checkButtonAvailability()
         }
     }
     
     private func takeQuiz() {
+        if let lastPressDate = UserDefaults.standard.object(forKey: "LastButtonPressDate") as? Date {
+            print(lastPressDate)
+        }
         path.append("quizView")
     }
     
     func checkButtonAvailability() {
         if let lastPressDate = UserDefaults.standard.object(forKey: "LastButtonPressDate") as? Date {
+            print(lastPressDate)
             let calendar = Calendar.current
             if let tomorrow = calendar.date(byAdding: .day, value: 1, to: lastPressDate),
                let now = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) {
                 if now >= tomorrow {
-                    isButtonEnabled = true
-                } else {
                     isButtonEnabled = false
+                } else {
+                    isButtonEnabled = true
                 }
             }
         }
