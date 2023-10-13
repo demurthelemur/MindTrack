@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SliderQuestion: View {
     let questionModel: QuestionModel
-    @Binding var impactPoint: Double
+    @Binding var impactPoint: Int
+    @State var tempDouble: Double = 1.0
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,7 +18,13 @@ struct SliderQuestion: View {
             Text(questionModel.Question)
                 .padding(.horizontal)
             
-            Slider(value: $impactPoint, in: 1...Double(questionModel.impact!), step: 1.0)
+            Slider(value: Binding(
+                get: { tempDouble },
+                set: { newValue in
+                    tempDouble = newValue
+                    impactPoint = Int(newValue) // Convert Double to Int
+                }
+            ), in: 1...Double(questionModel.impact!), step: 1.0)
                 .padding(.horizontal)
             
             HStack(alignment: .center){
