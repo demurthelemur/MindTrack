@@ -17,6 +17,7 @@
 		A01140C92AAE17BF00FA08FC /* SliderQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140C82AAE17BF00FA08FC /* SliderQuestion.swift */; };
 		A01140CC2AAE1E2200FA08FC /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140CB2AAE1E2200FA08FC /* QuizView.swift */; };
 		A01140CE2AAE1E5100FA08FC /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01140CD2AAE1E5100FA08FC /* QuestionModel.swift */; };
+		A034A76E2AD99ECB00346776 /* NotificationTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A034A76D2AD99ECB00346776 /* NotificationTimer.swift */; };
 		A03F2CA52AAB9ABB00032182 /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */; };
 		A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */; };
 		A03F2CAB2AABA25800032182 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F2CAA2AABA25800032182 /* SettingsPageView.swift */; };
@@ -63,6 +64,7 @@
 		A01140C82AAE17BF00FA08FC /* SliderQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderQuestion.swift; sourceTree = "<group>"; };
 		A01140CB2AAE1E2200FA08FC /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		A01140CD2AAE1E5100FA08FC /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		A034A76D2AD99ECB00346776 /* NotificationTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTimer.swift; sourceTree = "<group>"; };
 		A03F2CA42AAB9ABB00032182 /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
 		A03F2CA62AABA0DE00032182 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		A03F2CAA2AABA25800032182 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				A03F2CAA2AABA25800032182 /* SettingsPageView.swift */,
+				A034A76D2AD99ECB00346776 /* NotificationTimer.swift */,
 			);
 			path = SettingsPage;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				A01140BA2AAC803A00FA08FC /* FriendsListView.swift in Sources */,
 				A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */,
 				A04532342ABF534500DEB0D7 /* StartupView.swift in Sources */,
+				A034A76E2AD99ECB00346776 /* NotificationTimer.swift in Sources */,
 				A01140B72AABB33000FA08FC /* User.swift in Sources */,
 				A01140C42AAE113200FA08FC /* AppToolbar.swift in Sources */,
 				A01140BD2AAC849D00FA08FC /* IntroductionView.swift in Sources */,

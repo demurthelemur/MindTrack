@@ -11,6 +11,7 @@ struct MainPageView: View {
     
     @State private var path = NavigationPath()
     @StateObject var currentUser = User.devUser
+    @State var isButtonEnabled: Bool = false
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -34,12 +35,13 @@ struct MainPageView: View {
                     .bold()
                     .padding(.bottom, 30)
                 
-                BigBlueButton(action: takeQuiz, buttonText: "Take Quiz!")
+                BigButtonWithCustomColor(action: takeQuiz, buttonText: "Take Quiz!", color: isButtonEnabled ? .gray : .blue)
                     .navigationDestination(for: String.self) { view in
                         if view == "quizView" {
-                            QuizView(path: $path, currentUser: currentUser)
+                            QuizView(path: $path, didUserSolveQuiz: $isButtonEnabled, currentUser: currentUser)
                         }
                     }
+                    .disabled(isButtonEnabled)
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -52,6 +54,20 @@ struct MainPageView: View {
     
     private func takeQuiz() {
         path.append("quizView")
+    }
+    
+    func checkButtonAvailability() {
+        if let lastPressDate = UserDefaults.standard.object(forKey: "LastButtonPressDate") as? Date {
+            let calendar = Calendar.current
+            if let tomorrow = calendar.date(byAdding: .day, value: 1, to: lastPressDate),
+               let now = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) {
+                if now >= tomorrow {
+                    isButtonEnabled = true
+                } else {
+                    isButtonEnabled = false
+                }
+            }
+        }
     }
 }
 

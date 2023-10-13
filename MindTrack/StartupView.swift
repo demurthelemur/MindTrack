@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct StartupView: View {
     @State var path = NavigationPath()
     @State var userLoggedIn = false
-    
+
     @ViewBuilder
     var body: some View {
         NavigationStack(path: $path) {

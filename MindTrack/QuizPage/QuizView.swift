@@ -10,6 +10,7 @@ import SwiftUI
 struct QuizView: View {
     @StateObject var vm = QuestionViewModel()
     @Binding var path: NavigationPath
+    @Binding var didUserSolveQuiz: Bool
     @ObservedObject var currentUser: User
     
     let totalScore = 0
@@ -30,13 +31,15 @@ struct QuizView: View {
                 RadioButtonQuestion(questionModel: developmentTestQuestions[6], impactPoint: $vm.question7ImpactPoint)
             }
             BigButtonWithCustomColor(action: submitQuestions, buttonText: "Submit", color: Color.red)
-                .disabled(checkDisabled())
+                // .disabled(checkDisabled())
         }
     }
     
     private func submitQuestions() {
         vm.totalPoint = Int(vm.question1ImpactPoint) + vm.question2ImpactPoint + vm.question3ImpactPoint + Int(vm.question4ImpactPoint) + vm.question5ImpactPoint + vm.question6ImpactPoint + vm.question7ImpactPoint
         currentUser.points += vm.totalPoint
+        UserDefaults.standard.set(Date(), forKey: "LastButtonPressDate")
+        didUserSolveQuiz = true
         path.removeLast()
     }
     
