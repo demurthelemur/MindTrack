@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct MainPageView: View {
     
@@ -35,13 +36,10 @@ struct MainPageView: View {
                     .bold()
                     .padding(.bottom, 30)
                 
-                BigButtonWithCustomColor(action: takeQuiz, buttonText: "Take Quiz!", color: isButtonEnabled ? .gray : .blue)
-                    .navigationDestination(for: String.self) { view in
-                        if view == "quizView" {
-                            QuizView(path: $path, didUserSolveQuiz: $isButtonEnabled, currentUser: currentUser)
-                        }
-                    }
+                NavigationLink("Take a test", destination: QuizView(didUserSolveQuiz: $isButtonEnabled, currentUser: currentUser))
                     .disabled(isButtonEnabled)
+                
+
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -52,12 +50,10 @@ struct MainPageView: View {
         }.onAppear() {
             checkButtonAvailability()
         }
+        
     }
     
     private func takeQuiz() {
-        if let lastPressDate = UserDefaults.standard.object(forKey: "LastButtonPressDate") as? Date {
-            print(lastPressDate)
-        }
         path.append("quizView")
     }
     

@@ -21,26 +21,13 @@ struct SettingsPageView: View {
                 }
                 
                 NavigationLink {
-                    Text("Change Quiz Timing")
+                    NotificationTimer()
                 } label: {
                     HStack {
                         Image(systemName: "clock.fill")
                         Text("Change Quiz Timing")
                     }
                 }
-                
-                NavigationLink {
-                    Text("Change Quiz Timing")
-                } label: {
-                    HStack {
-                        Image(systemName: "person.fill")
-                        Text("Account Settings")
-                    }
-                }
-                
-                Spacer()
-                
-
 
             }
             .navigationTitle("Settings")

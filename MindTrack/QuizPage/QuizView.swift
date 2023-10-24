@@ -9,9 +9,9 @@ import SwiftUI
 
 struct QuizView: View {
     @StateObject var vm = QuestionViewModel()
-    @Binding var path: NavigationPath
     @Binding var didUserSolveQuiz: Bool
     @ObservedObject var currentUser: User
+    @State var showAlert = false
     
     let totalScore = 0
     var body: some View {
@@ -30,8 +30,11 @@ struct QuizView: View {
                 RadioButtonQuestion(questionModel: developmentTestQuestions[5], impactPoint: $vm.question6ImpactPoint)
                 RadioButtonQuestion(questionModel: developmentTestQuestions[6], impactPoint: $vm.question7ImpactPoint)
             }
-            BigButtonWithCustomColor(action: submitQuestions, buttonText: "Submit", color: Color.red)
-                // .disabled(checkDisabled())
+            BigButtonWithCustomColor(action: submitQuestions, buttonText: "Submit", color: didUserSolveQuiz ? Color.gray : Color.red)
+                .alert(isPresented: $showAlert) {
+                    alert
+                }
+                .disabled(didUserSolveQuiz)
         }
     }
     
@@ -40,21 +43,20 @@ struct QuizView: View {
         currentUser.points += vm.totalPoint
         UserDefaults.standard.set(Date(), forKey: "LastButtonPressDate")
         didUserSolveQuiz = true
-        path.removeLast()
+        showAlert = true
     }
     
-    private func checkDisabled() -> Bool {
-        if vm.question1ImpactPoint == 0 ||
-            vm.question2ImpactPoint == 0 ||
-            vm.question3ImpactPoint == 0 ||
-            vm.question4ImpactPoint == 0 || 
-            vm.question5ImpactPoint == 0 || 
-            vm.question6ImpactPoint == 0 ||
-            vm.question7ImpactPoint == 0 
-        {return true}
-        return false
-        
+    
+    private var alert: Alert {
+        Alert(
+            title: Text("Your results have been saved"),
+            message: Text("You may return now"),
+            primaryButton: .default(Text("OK")) {
+                showAlert = false
+            }, secondaryButton: .cancel()
+        )
     }
+
 }
 
 //struct QuizView_Previews: PreviewProvider {
