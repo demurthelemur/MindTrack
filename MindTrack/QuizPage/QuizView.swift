@@ -12,8 +12,10 @@ struct QuizView: View {
     @Binding var didUserSolveQuiz: Bool
     @ObservedObject var currentUser: User
     @State var showAlert = false
+    var questions = developmentTestQuestions.shuffled()
     
     let totalScore = 0
+    @ViewBuilder
     var body: some View {
         VStack {
             Text("Mind Track Quiz")
@@ -22,13 +24,14 @@ struct QuizView: View {
                 .padding()
             
             ScrollView {
-                SliderQuestion(questionModel: developmentTestQuestions[0], impactPoint: $vm.question1ImpactPoint)
+                RadioButtonQuestion(questionModel: developmentTestQuestions[0], impactPoint: $vm.question1ImpactPoint)
                 RadioButtonQuestion(questionModel: developmentTestQuestions[1], impactPoint: $vm.question2ImpactPoint)
                 RadioButtonQuestion(questionModel: developmentTestQuestions[2], impactPoint: $vm.question3ImpactPoint)
-                SliderQuestion(questionModel: developmentTestQuestions[3], impactPoint: $vm.question4ImpactPoint)
+                RadioButtonQuestion(questionModel: developmentTestQuestions[3], impactPoint: $vm.question4ImpactPoint)
                 RadioButtonQuestion(questionModel: developmentTestQuestions[4], impactPoint: $vm.question5ImpactPoint)
                 RadioButtonQuestion(questionModel: developmentTestQuestions[5], impactPoint: $vm.question6ImpactPoint)
                 RadioButtonQuestion(questionModel: developmentTestQuestions[6], impactPoint: $vm.question7ImpactPoint)
+
             }
             BigButtonWithCustomColor(action: submitQuestions, buttonText: "Submit", color: didUserSolveQuiz ? Color.gray : Color.red)
                 .alert(isPresented: $showAlert) {
