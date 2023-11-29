@@ -14,8 +14,8 @@
             filePath = "MindTrack/MainPage/MainPageView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AEFFAAD1-04D5-481F-8766-E2E0A872AD8D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MindTrack/QuizPage/QuizView.swift"
@@ -81,7 +81,53 @@
                   endingLineNumber = "25"
                   offsetFromSymbolStart = "836">
                </Location>
+               <Location
+                  uuid = "AEFFAAD1-04D5-481F-8766-E2E0A872AD8D - 9caba0ca361d4bda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt; in MindTrack.QuizView.body.getter : some"
+                  moduleName = "MindTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lemur/Desktop/Coding/Projects/IOS%20Apps/MindTrack/MindTrack/QuizPage/QuizView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1336">
+               </Location>
+               <Location
+                  uuid = "AEFFAAD1-04D5-481F-8766-E2E0A872AD8D - 854be46aefbf3b42"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion, MindTrack.RadioButtonQuestion)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt; in MindTrack.QuizView.body.getter : some"
+                  moduleName = "MindTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lemur/Desktop/Coding/Projects/IOS%20Apps/MindTrack/MindTrack/QuizPage/QuizView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "528">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D50D39C3-F1DE-4E4C-9BCC-9E7890E3C88D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MindTrack/SettingsPage/SettingsPageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "SettingsPageView"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

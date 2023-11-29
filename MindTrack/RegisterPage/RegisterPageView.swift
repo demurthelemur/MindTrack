@@ -60,13 +60,13 @@ struct RegisterPageView: View {
             Spacer()
             
             BigBlueButton(action: registerButtonClicked, buttonText: "Register")
-            .disabled(checkDisabled())
+            //.disabled(checkDisabled())
 
         }
     }
     
     private func registerButtonClicked() {
-        let newUser = User(name: name, lastName: lastName, password: password, email: email, birthDate: birthDate)
+        let newUser = User(name: name, lastName: lastName, email: email)
         path.append("intro")
     }
     

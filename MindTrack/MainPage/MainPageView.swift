@@ -11,7 +11,7 @@ import UserNotifications
 struct MainPageView: View {
     
     @State private var path = NavigationPath()
-    @StateObject var currentUser = User.devUser
+    @StateObject var currentUser = User.createUserFromAppData()
     @State var isButtonEnabled: Bool = false
     @ObservedObject var reloadViewHelper = ReloadViewHelper()
     

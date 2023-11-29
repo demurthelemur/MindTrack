@@ -42,6 +42,13 @@ struct LoginPageView: View {
     }
     
     func loginButtonPressed() {
+        UserDefaults.standard.set("Demir", forKey: "name")
+        UserDefaults.standard.set("Dereli", forKey: "lastName")
+        UserDefaults.standard.set("Test", forKey: "password")
+        UserDefaults.standard.set("email", forKey: "email")
+        UserDefaults.standard.set(5, forKey: "points")
+        UserDefaults.standard.set("Squirtle", forKey: "petType")
+        UserDefaults.standard.set(true, forKey: "userState")
         userState = true
     }
 }

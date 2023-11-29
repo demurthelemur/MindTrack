@@ -10,21 +10,17 @@ import Foundation
 class User: ObservableObject, Codable {
     var name: String
     var lastName: String
-    var password: String
     var email: String
-    var birthDate: Date
     @Published var points: Int
     var petType: String
     
-    static var devUser = User(name: "demir", lastName: "dereli", password: "testpassword", email: "derelidemir123@gmail.com", petType: "Squirtle")
+    static var devUser = User(name: "demir", lastName: "dereli", email: "derelidemir123@gmail.com",  points: 12, petType: "Squirtle")
     
     //Create a new user
-    init(name: String, lastName: String, password: String, email: String, birthDate: Foundation.Date = Date.now, points: Int = 0, petType: String = "Pikachu") {
+    init(name: String, lastName: String, email: String, points: Int = 0, petType: String = "Pikachu") {
         self.name = name
         self.lastName = lastName
-        self.password = password
         self.email = email
-        self.birthDate = birthDate
         self.points = points
         self.petType = petType
     }
@@ -38,7 +34,7 @@ class User: ObservableObject, Codable {
             } else {
                 return PikachuModel().thirdEvo
             }
-        } else if petType == "Charmander" {
+        } else if petType == "charmander" {
             if points < 0 {
                 return CharmanderModel().firstEvo
             } else if points < 100 {
@@ -58,16 +54,14 @@ class User: ObservableObject, Codable {
     }
     
     enum CodingKeys: CodingKey {
-        case name, lastName, password, email, birthDate, points, petType
+        case name, lastName, password, email, points, petType
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(name, forKey: .name)
         try container.encode(lastName, forKey: .lastName)
-        try container.encode(password, forKey: .password)
         try container.encode(email, forKey: .email)
-        try container.encode(birthDate, forKey: .birthDate)
         try container.encode(points, forKey: .points)
         try container.encode(petType, forKey: .petType)
     }
@@ -77,14 +71,21 @@ class User: ObservableObject, Codable {
 
         name = try container.decode(String.self, forKey: .name)
         lastName = try container.decode(String.self, forKey: .lastName)
-        password = try container.decode(String.self, forKey: .password)
         email = try container.decode(String.self, forKey: .email)
-        birthDate = try container.decode(Date.self, forKey: .birthDate)
         points = try container.decode(Int.self, forKey: .points)
         petType = try container.decode(String.self, forKey: .petType)
     }
     
-    
+    static func createUserFromAppData() -> User{
+        var name = UserDefaults.standard.string(forKey: "name")
+        var lastName = UserDefaults.standard.string(forKey: "lastName")
+        var email = UserDefaults.standard.string(forKey: "email")
+        var points = UserDefaults.standard.integer(forKey: "points")
+        var petType = UserDefaults.standard.string(forKey: "petType")
+        
+        return User(name: name!, lastName: lastName!, email: email!, points: points, petType: petType!)
+        
+    }
     
     //Get User Points
     //Get User Friends

@@ -10,7 +10,7 @@ import UserNotifications
 
 struct StartupView: View {
     @State var path = NavigationPath()
-    @State var userLoggedIn = false
+    @State var userLoggedIn = UserDefaults.standard.bool(forKey: "userState") ?? false
 
     @ViewBuilder
     var body: some View {

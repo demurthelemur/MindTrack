@@ -27,6 +27,7 @@ struct ChangePet: View {
     
     func changePet() {
         currentUser.petType = selectedPet
+        UserDefaults.standard.set(selectedPet, forKey: "petType")
         print(currentUser.petType)
     }
 }

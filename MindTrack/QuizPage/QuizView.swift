@@ -43,7 +43,9 @@ struct QuizView: View {
     
     private func submitQuestions() {
         vm.totalPoint = Int(vm.question1ImpactPoint) + vm.question2ImpactPoint + vm.question3ImpactPoint + Int(vm.question4ImpactPoint) + vm.question5ImpactPoint + vm.question6ImpactPoint + vm.question7ImpactPoint
+        let writePoints = currentUser.points + vm.totalPoint
         currentUser.points += vm.totalPoint
+        UserDefaults.standard.set(writePoints, forKey: "points")
         UserDefaults.standard.set(Date(), forKey: "LastButtonPressDate")
         didUserSolveQuiz = true
         showAlert = true
