@@ -66,7 +66,7 @@ struct RegisterPageView: View {
     }
     
     private func registerButtonClicked() {
-        let newUser = User(name: name, lastName: lastName, email: email)
+        let newUser = User(id: "1", name: name, lastName: lastName, email: email)
         path.append("intro")
     }
     

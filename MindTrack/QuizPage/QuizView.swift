@@ -51,6 +51,9 @@ struct QuizView: View {
         showAlert = true
     }
     
+    private func sendUserPoint(point: Int) {
+        
+    }
     
     private var alert: Alert {
         Alert(
