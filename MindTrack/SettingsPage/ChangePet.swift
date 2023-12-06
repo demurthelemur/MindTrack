@@ -26,9 +26,25 @@ struct ChangePet: View {
     }
     
     func changePet() {
+        changePet(petName: selectedPet)
         currentUser.petType = selectedPet
         UserDefaults.standard.set(selectedPet, forKey: "petType")
         print(currentUser.petType)
+    }
+    
+    private func changePet(petName: String) {
+        let id = UserDefaults.standard.string(forKey: "id")
+        guard let url = URL(string: "http://localhost:8080/users/pet/\(id!)") else {return}
+        let body: [String : String] = ["petType": "\(petName)"]
+        let JSONBody = try! JSONSerialization.data(withJSONObject: body)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.httpBody = JSONBody
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            print(response)
+        }.resume()
     }
 }
 
