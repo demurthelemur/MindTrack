@@ -47,12 +47,26 @@ struct QuizView: View {
         currentUser.points += vm.totalPoint
         UserDefaults.standard.set(writePoints, forKey: "points")
         UserDefaults.standard.set(Date(), forKey: "LastButtonPressDate")
+        sendUserPoint(point: writePoints)
         didUserSolveQuiz = true
         showAlert = true
     }
     
     private func sendUserPoint(point: Int) {
+        let id = UserDefaults.standard.string(forKey: "id")
+        print(id)
+        guard let url = URL(string: "http://localhost:8080/users/point/\(id!)") else {return}
+        print(url)
+        let body: [String : String] = ["point": "\(point)"]
+        let JSONBody = try! JSONSerialization.data(withJSONObject: body)
         
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.httpBody = JSONBody
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            print(response)
+        }.resume()
     }
     
     private var alert: Alert {
