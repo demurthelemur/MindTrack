@@ -56,6 +56,7 @@ struct LoginPageView: View {
             
             do {
                 let parsedData = try JSONDecoder().decode(User.self, from: data!)
+                
                 UserDefaults.standard.set(parsedData.id, forKey: "id")
                 UserDefaults.standard.set(parsedData.name, forKey: "name")
                 UserDefaults.standard.set(parsedData.lastName, forKey: "lastName")
@@ -63,6 +64,7 @@ struct LoginPageView: View {
                 UserDefaults.standard.set(parsedData.points, forKey: "points")
                 UserDefaults.standard.set(parsedData.petType, forKey: "petType")
                 UserDefaults.standard.set(true, forKey: "userState")
+                UserDefaults.standard.set(password, forKey: "password")
                 userState = true
             } catch {
                 print("\(error)")

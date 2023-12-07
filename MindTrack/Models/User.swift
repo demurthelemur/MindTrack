@@ -28,7 +28,7 @@ class User: ObservableObject, Codable {
     }
     
     var petState: String {
-        if petType == "pikachu" {
+        if petType == PikachuModel().firstEvo {
             if points < 0 {
                 return PikachuModel().firstEvo
             } else if points < 100 {

@@ -50,6 +50,7 @@ struct MainPageView: View {
             }
         }.onAppear() {
             checkButtonAvailability()
+            relogin()
             reloadViewHelper.reloadView()
         }
         
@@ -57,6 +58,25 @@ struct MainPageView: View {
     
     private func takeQuiz() {
         path.append("quizView")
+    }
+    
+    private func relogin() {
+        guard let url = URL(string: "http://localhost:8080/auth/login") else {return}
+        let email = UserDefaults.standard.string(forKey: "email")
+        let password = UserDefaults.standard.string(forKey: "password")
+        
+        let body: [String : String] = ["email": email!, "password": password!]
+        let JSONBody = try! JSONSerialization.data(withJSONObject: body)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = JSONBody
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            print(response)
+        }.resume()
+        
     }
     
     func checkButtonAvailability() {

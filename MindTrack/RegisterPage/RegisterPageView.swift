@@ -66,9 +66,35 @@ struct RegisterPageView: View {
     }
     
     private func registerButtonClicked() {
-        let newUser = User(id: "1", name: name, lastName: lastName, email: email)
+        guard let url = URL(string: "http://localhost:8080/auth/register") else {return}
+        
+        let body: [String : String] = ["firstName": name, "lastName": lastName, "email": email, "password": password]
+        let JSONBody = try! JSONSerialization.data(withJSONObject: body)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = JSONBody
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            do {
+                print(response)
+                let parsedData = try JSONDecoder().decode(User.self, from: data!)
+                UserDefaults.standard.set(parsedData.id, forKey: "id")
+                UserDefaults.standard.set(parsedData.name, forKey: "name")
+                UserDefaults.standard.set(parsedData.lastName, forKey: "lastName")
+                UserDefaults.standard.set(parsedData.email, forKey: "email")
+                UserDefaults.standard.set(parsedData.points, forKey: "points")
+                UserDefaults.standard.set(parsedData.petType, forKey: "petType")
+                UserDefaults.standard.set(true, forKey: "userState")
+                UserDefaults.standard.set(password, forKey: "password")
+            } catch {
+                print("\(error)")
+            }
+        }.resume()
         path.append("intro")
     }
+    
     
     private func checkDisabled() -> Bool {
         if name.count >= 3, lastName.count >= 3, password.count >= 7, birthDate != .now, accepted {
