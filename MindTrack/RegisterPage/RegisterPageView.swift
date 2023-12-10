@@ -14,6 +14,8 @@ struct RegisterPageView: View {
     @State var email: String = ""
     @State private var birthDate = Date.now
     @State var accepted: Bool = false
+    @State private var showAlert = false
+    @State private var registerError = false
     
     @Binding var userState: Bool
     @Binding var path: NavigationPath
@@ -58,11 +60,17 @@ struct RegisterPageView: View {
             }
             
             Spacer()
-            
-            BigBlueButton(action: registerButtonClicked, buttonText: "Register")
-            //.disabled(checkDisabled())
+            BigButtonWithCustomColor(action: registerButtonClicked, buttonText: "Register", color: Color.blue)
+            .disabled(checkDisabled())
 
         }
+        .alert(isPresented: $showAlert) {
+                  Alert(
+                    title: Text(registerError ? "Couldn't register user" : "Could not connect to the server"),
+                    message: Text(registerError ? "User already exists or information given is wrong" : "Try again later."),
+                      dismissButton: .default(Text("OK"))
+                  )
+              }
     }
     
     private func registerButtonClicked() {
@@ -76,28 +84,45 @@ struct RegisterPageView: View {
         request.httpBody = JSONBody
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        
+        
+        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            do {
-                print(response)
-                let parsedData = try JSONDecoder().decode(User.self, from: data!)
-                UserDefaults.standard.set(parsedData.id, forKey: "id")
-                UserDefaults.standard.set(parsedData.name, forKey: "name")
-                UserDefaults.standard.set(parsedData.lastName, forKey: "lastName")
-                UserDefaults.standard.set(parsedData.email, forKey: "email")
-                UserDefaults.standard.set(parsedData.points, forKey: "points")
-                UserDefaults.standard.set(parsedData.petType, forKey: "petType")
-                UserDefaults.standard.set(true, forKey: "userState")
-                UserDefaults.standard.set(password, forKey: "password")
-            } catch {
-                print("\(error)")
+            if let _ = error {
+                showAlert = true
+                return
+            } else {
+                guard let response = response as? HTTPURLResponse else {return}
+                if response.statusCode == 200 {
+                    do {
+                        print(response)
+                        let parsedData = try JSONDecoder().decode(User.self, from: data!)
+                        UserDefaults.standard.set(parsedData.id, forKey: "id")
+                        UserDefaults.standard.set(parsedData.name, forKey: "name")
+                        UserDefaults.standard.set(parsedData.lastName, forKey: "lastName")
+                        UserDefaults.standard.set(parsedData.email, forKey: "email")
+                        UserDefaults.standard.set(parsedData.points, forKey: "points")
+                        UserDefaults.standard.set(parsedData.petType, forKey: "petType")
+                        UserDefaults.standard.set(true, forKey: "userState")
+                        UserDefaults.standard.set(password, forKey: "password")
+                        path.append("intro")
+                    } catch {
+                        print("\(error)")
+                    }
+                } else {
+                    registerError = true
+                    showAlert = true
+                }
             }
+        
         }.resume()
-        path.append("intro")
+
     }
     
     
     private func checkDisabled() -> Bool {
         if name.count >= 3, lastName.count >= 3, password.count >= 7, birthDate != .now, accepted {
+            
             return false
         } else {
             return true

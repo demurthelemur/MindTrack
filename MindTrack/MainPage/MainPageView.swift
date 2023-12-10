@@ -14,6 +14,7 @@ struct MainPageView: View {
     @StateObject var currentUser = User.createUserFromAppData()
     @State var isButtonEnabled: Bool = false
     @ObservedObject var reloadViewHelper = ReloadViewHelper()
+    @State private var showAlert = false
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -41,6 +42,13 @@ struct MainPageView: View {
                     .disabled(isButtonEnabled)
                 
 
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Couldn't Connect to Server"),
+                    message: Text("Don't worry your data is still saved locally."),
+                    dismissButton: .default(Text("OK"))
+                )
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -74,7 +82,10 @@ struct MainPageView: View {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            print(response)
+            if let _ = error {
+                showAlert = true
+                print("Error logging in")
+            }
         }.resume()
         
     }

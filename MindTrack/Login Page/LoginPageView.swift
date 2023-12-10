@@ -11,8 +11,10 @@ struct LoginPageView: View {
     
     @State var email: String = ""
     @State var password: String = ""
+    @State private var showAlert = false
+    @State private var loginError = false
     
-    @Binding var userState: Bool    
+    @Binding var userState: Bool
     var body: some View {
         VStack {
             Spacer()
@@ -39,6 +41,13 @@ struct LoginPageView: View {
             
             Spacer()
         }
+        .alert(isPresented: $showAlert) {
+                  Alert(
+                    title: Text(loginError ? "Couldn't log in" : "Could not connect to the server"),
+                    message: Text(loginError ? "Please check credentials" : "Try again later."),
+                      dismissButton: .default(Text("OK"))
+                  )
+              }
     }
     
     func loginButtonPressed() {
@@ -53,26 +62,34 @@ struct LoginPageView: View {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            do {
-                let parsedData = try JSONDecoder().decode(User.self, from: data!)
-                
-                UserDefaults.standard.set(parsedData.id, forKey: "id")
-                UserDefaults.standard.set(parsedData.name, forKey: "name")
-                UserDefaults.standard.set(parsedData.lastName, forKey: "lastName")
-                UserDefaults.standard.set(parsedData.email, forKey: "email")
-                UserDefaults.standard.set(parsedData.points, forKey: "points")
-                UserDefaults.standard.set(parsedData.petType, forKey: "petType")
-                UserDefaults.standard.set(true, forKey: "userState")
-                UserDefaults.standard.set(password, forKey: "password")
-                userState = true
-            } catch {
-                print("\(error)")
+           
+            if let _ = error {
+                showAlert = true
+                return
+            } else {
+                guard let response = response as? HTTPURLResponse else {return}
+                if response.statusCode == 200 {
+                    do {
+                        let parsedData = try JSONDecoder().decode(User.self, from: data!)
+                        
+                        UserDefaults.standard.set(parsedData.id, forKey: "id")
+                        UserDefaults.standard.set(parsedData.name, forKey: "name")
+                        UserDefaults.standard.set(parsedData.lastName, forKey: "lastName")
+                        UserDefaults.standard.set(parsedData.email, forKey: "email")
+                        UserDefaults.standard.set(parsedData.points, forKey: "points")
+                        UserDefaults.standard.set(parsedData.petType, forKey: "petType")
+                        UserDefaults.standard.set(true, forKey: "userState")
+                        UserDefaults.standard.set(password, forKey: "password")
+                        userState = true
+                    } catch {
+                        print("\(error)")
+                    }
+                } else {
+                    loginError = true
+                    showAlert = true
+                }
             }
-
-            
         }.resume()
-        
     }
 }
 
