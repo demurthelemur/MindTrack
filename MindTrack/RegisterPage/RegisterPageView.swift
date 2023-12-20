@@ -16,6 +16,7 @@ struct RegisterPageView: View {
     @State var accepted: Bool = false
     @State private var showAlert = false
     @State private var registerError = false
+    @State private var confirmEmail = false
     
     @Binding var userState: Bool
     @Binding var path: NavigationPath
@@ -58,6 +59,13 @@ struct RegisterPageView: View {
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .alert(isPresented: $confirmEmail) {
+                      Alert(
+                        title: Text("Confirm Email"),
+                        message: Text("Login "),
+                          dismissButton: .default(Text("OK"))
+                      )
+                  }
             
             Spacer()
             BigButtonWithCustomColor(action: registerButtonClicked, buttonText: "Register", color: Color.blue)
@@ -66,9 +74,12 @@ struct RegisterPageView: View {
         }
         .alert(isPresented: $showAlert) {
                   Alert(
-                    title: Text(registerError ? "Couldn't register user" : "Could not connect to the server"),
-                    message: Text(registerError ? "User already exists or information given is wrong" : "Try again later."),
-                      dismissButton: .default(Text("OK"))
+                    title: Text(registerError ? "Couldn't register user" : "User registered"),
+                    message: Text(registerError ? "User already exists or information given is wrong" : "Please confirm your email and login again"),
+                    primaryButton: .default(Text("Return")) {
+                        path.removeLast()
+                    },
+                    secondaryButton: .cancel()
                   )
               }
     }
@@ -105,8 +116,9 @@ struct RegisterPageView: View {
                         UserDefaults.standard.set(parsedData.petType, forKey: "petType")
                         UserDefaults.standard.set(true, forKey: "userState")
                         UserDefaults.standard.set(password, forKey: "password")
-                        path.append("intro")
+
                     } catch {
+                        showAlert = true
                         print("\(error)")
                     }
                 } else {

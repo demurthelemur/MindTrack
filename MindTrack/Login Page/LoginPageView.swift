@@ -43,8 +43,8 @@ struct LoginPageView: View {
         }
         .alert(isPresented: $showAlert) {
                   Alert(
-                    title: Text(loginError ? "Couldn't log in" : "Could not connect to the server"),
-                    message: Text(loginError ? "Please check credentials" : "Try again later."),
+                    title: Text(loginError ? "Couldn't log in" : "Please confirm your email"),
+                    message: Text(loginError ? "Please check credentials" : "And try again."),
                       dismissButton: .default(Text("OK"))
                   )
               }
@@ -84,7 +84,11 @@ struct LoginPageView: View {
                     } catch {
                         print("\(error)")
                     }
-                } else {
+                } else if (response.statusCode == 403) {
+                    loginError = false
+                    showAlert = true
+                }
+                else {
                     loginError = true
                     showAlert = true
                 }

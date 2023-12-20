@@ -10,6 +10,7 @@ import SwiftUI
 struct ChangePet: View {
     @ObservedObject var currentUser: User
     @State var selectedPet = CharmanderModel().firstEvo
+    @State private var showAlert = false
     
     var body: some View {
         
@@ -23,12 +24,21 @@ struct ChangePet: View {
         }
         
         BigBlueButton(action: changePet, buttonText: "Change Pet")
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Pet changed succesfully"),
+                    message: Text("Pet changed to \(selectedPet)"),
+                    dismissButton: .cancel(Text("Dismiss"))
+                )
+            }
+
     }
     
     func changePet() {
         changePet(petName: selectedPet)
         currentUser.petType = selectedPet
         UserDefaults.standard.set(selectedPet, forKey: "petType")
+        showAlert = true
         print(currentUser.petType)
     }
     

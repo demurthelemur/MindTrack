@@ -39,7 +39,7 @@ struct SettingsPageView: View {
     }
     
     private func logOutButtonClicked() {
-        //UserDefaults.standard.set(false, forKey: "userState")
+        UserDefaults.standard.set(false, forKey: "userState")
     }
 }
 
