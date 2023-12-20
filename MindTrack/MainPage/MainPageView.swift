@@ -46,8 +46,10 @@ struct MainPageView: View {
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("Couldn't Connect to Server"),
-                    message: Text("Don't worry your data is still saved locally."),
-                    dismissButton: .default(Text("OK"))
+                    message: Text("You need the internet to use the app"),
+                    dismissButton: .default(Text("OK")) {
+                        exit(0)
+                    }
                 )
             }
             .navigationBarTitleDisplayMode(.inline)

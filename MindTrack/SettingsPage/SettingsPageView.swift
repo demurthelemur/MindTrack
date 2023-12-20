@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct SettingsPageView: View {
     @ObservedObject var currentUser: User
+    @State var showAlert = false
     
     var body: some View {
         NavigationStack {
@@ -33,9 +35,23 @@ struct SettingsPageView: View {
 
             }
             .navigationTitle("Settings")
+            .alert(isPresented: $showAlert) {
+                Alert(
+                  title: Text("Coppied your ID"),
+                  message: Text("Share your ID to add new Friends"),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
             
-            Text("Current user ID: \(currentUser.id)")
-                .bold()
+            Button {
+                let textToCopy = currentUser.id
+                UIPasteboard.general.string = textToCopy
+                showAlert = true
+            } label: {
+                Text("Current user ID: \(currentUser.id)")
+                    .bold()
+            }
+            
             BigButtonWithCustomColor(action: logOutButtonClicked, buttonText: "Log Out", color: Color.red)
         }
     }
