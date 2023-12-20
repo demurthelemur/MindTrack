@@ -34,6 +34,8 @@ struct SettingsPageView: View {
             }
             .navigationTitle("Settings")
             
+            Text("Current user ID: \(currentUser.id)")
+                .bold()
             BigButtonWithCustomColor(action: logOutButtonClicked, buttonText: "Log Out", color: Color.red)
         }
     }
