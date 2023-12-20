@@ -37,6 +37,8 @@
 		A0A2C3562AAB3DA400B40487 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C3552AAB3DA400B40487 /* LoginPageView.swift */; };
 		A0A2C35A2AAB3DC300B40487 /* Big Blue Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C3592AAB3DC300B40487 /* Big Blue Button.swift */; };
 		A0A2C35E2AAB5A0700B40487 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C35D2AAB5A0700B40487 /* CustomTextFields.swift */; };
+		A0E369E62B3300A10029FD31 /* addFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E369E52B3300A10029FD31 /* addFriend.swift */; };
+		A0E369E82B3303B00029FD31 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E369E72B3303B00029FD31 /* FriendModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		A0A2C3552AAB3DA400B40487 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		A0A2C3592AAB3DC300B40487 /* Big Blue Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Big Blue Button.swift"; sourceTree = "<group>"; };
 		A0A2C35D2AAB5A0700B40487 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
+		A0E369E52B3300A10029FD31 /* addFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addFriend.swift; sourceTree = "<group>"; };
+		A0E369E72B3303B00029FD31 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 				A08664D92AD6A97C005B7CA3 /* Pet Models */,
 				A01140B62AABB33000FA08FC /* User.swift */,
 				A01140CD2AAE1E5100FA08FC /* QuestionModel.swift */,
+				A0E369E72B3303B00029FD31 /* FriendModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				A01140B92AAC803A00FA08FC /* FriendsListView.swift */,
+				A0E369E52B3300A10029FD31 /* addFriend.swift */,
 			);
 			path = FriendsList;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				A064FCB32AD5C89A009B4911 /* QuestionViewModel.swift in Sources */,
 				A03F2CAB2AABA25800032182 /* SettingsPageView.swift in Sources */,
 				A03F2CA52AAB9ABB00032182 /* RegisterPageView.swift in Sources */,
+				A0E369E62B3300A10029FD31 /* addFriend.swift in Sources */,
 				A01140BA2AAC803A00FA08FC /* FriendsListView.swift in Sources */,
 				A061F15C2A994124002BC536 /* MindTrackApp.swift in Sources */,
 				A04532342ABF534500DEB0D7 /* StartupView.swift in Sources */,
@@ -451,6 +458,7 @@
 				A01140BF2AAC84B200FA08FC /* FriendsListItem.swift in Sources */,
 				A03F2CA72AABA0DE00032182 /* CheckboxToggleStyle.swift in Sources */,
 				A01140CE2AAE1E5100FA08FC /* QuestionModel.swift in Sources */,
+				A0E369E82B3303B00029FD31 /* FriendModel.swift in Sources */,
 				A01140CC2AAE1E2200FA08FC /* QuizView.swift in Sources */,
 				A01140C22AAE0EBF00FA08FC /* MainPageView.swift in Sources */,
 				A01C92D12B16865F00572C97 /* BlastoiseModel.swift in Sources */,

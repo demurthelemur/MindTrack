@@ -13,6 +13,7 @@ struct FriendView: View {
     let Score: Int
     let imageName: String
     let borderColor: Color
+    let id: String
     
     
     var body: some View {
