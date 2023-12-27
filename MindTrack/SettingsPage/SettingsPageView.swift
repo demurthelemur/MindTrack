@@ -10,7 +10,8 @@ import UIKit
 
 struct SettingsPageView: View {
     @ObservedObject var currentUser: User
-    @State var showAlert = false
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showShareSheet = false
     
     var body: some View {
         NavigationStack {
@@ -35,30 +36,36 @@ struct SettingsPageView: View {
 
             }
             .navigationTitle("Settings")
-            .alert(isPresented: $showAlert) {
-                Alert(
-                  title: Text("Coppied your ID"),
-                  message: Text("Share your ID to add new Friends"),
-                    dismissButton: .default(Text("OK"))
-                )
-            }
+
             
-            Button {
-                let textToCopy = currentUser.id
-                UIPasteboard.general.string = textToCopy
-                showAlert = true
-            } label: {
-                Text("Current user ID: \(currentUser.id)")
-                    .bold()
-            }
-            
+            BigBlueButton(action: shareID, buttonText: "Share ID")
+                .sheet(isPresented: $showShareSheet) {
+                    ShareSheet(itemsToShare: [currentUser.id])
+                }
+
             BigButtonWithCustomColor(action: logOutButtonClicked, buttonText: "Log Out", color: Color.red)
         }
     }
     
     private func logOutButtonClicked() {
+        presentationMode.wrappedValue.dismiss()
         UserDefaults.standard.set(false, forKey: "userState")
+    }
+    
+    private func shareID() {
+        showShareSheet = true
     }
 }
 
+struct ShareSheet: UIViewControllerRepresentable {
+    var itemsToShare: [Any]
 
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        return controller
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
+        // No update currently needed
+    }
+}

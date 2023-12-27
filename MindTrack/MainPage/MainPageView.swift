@@ -48,7 +48,7 @@ struct MainPageView: View {
                     title: Text("Couldn't Connect to Server"),
                     message: Text("You need the internet to use the app"),
                     dismissButton: .default(Text("OK")) {
-                        exit(0)
+                        //exit(0)
                     }
                 )
             }
@@ -108,11 +108,7 @@ struct MainPageView: View {
     }
 }
 
-struct MainPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainPageView()
-    }
-}
+
 
 class ReloadViewHelper: ObservableObject {
     func reloadView() {

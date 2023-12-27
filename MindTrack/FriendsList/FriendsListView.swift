@@ -28,7 +28,7 @@ struct FriendsListView: View {
                         }
                 }
             }
-            .sheet(isPresented: $showCustomAlert) {
+            .sheet(isPresented: $showCustomAlert, onDismiss: refreshFriends) {
                 addFriendView(show: $showCustomAlert, ID: $ID, showAlert: $showAlert, friendsList: $friendsList)
             }
             .alert(isPresented: $showAlert) {
@@ -48,31 +48,7 @@ struct FriendsListView: View {
                 }
             }
             .onAppear() {
-                let id = UserDefaults.standard.string(forKey: "id")
-                guard let url = URL(string: "http://localhost:8080/users/friends/\(id!)") else {return}
-                
-                var request = URLRequest(url: url)
-                request.httpMethod = "GET"
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    if let _ = error {
-                        showAlert = true
-                    } else {
-                        guard let response = response as? HTTPURLResponse else {return}
-                        if response.statusCode == 200 {
-                            do {
-                                let resultData = try JSONDecoder().decode(FriendModelArray.self, from: data!)
-                                friendsList = resultData
-                            } catch {
-                                print("\(error)")
-                            }
-                        } else {
-                            print(response)
-                            showAlert = true
-                        }
-                    }
-
-                }.resume()
+                refreshFriends()
             }
     }
     
@@ -100,6 +76,35 @@ struct FriendsListView: View {
             }
 
         }.resume()
+    }
+    
+    private func refreshFriends() {
+        let id = UserDefaults.standard.string(forKey: "id")
+        guard let url = URL(string: "http://localhost:8080/users/friends/\(id!)") else {return}
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let _ = error {
+                showAlert = true
+            } else {
+                guard let response = response as? HTTPURLResponse else {return}
+                if response.statusCode == 200 {
+                    do {
+                        let resultData = try JSONDecoder().decode(FriendModelArray.self, from: data!)
+                        friendsList = resultData
+                    } catch {
+                        print("\(error)")
+                    }
+                } else {
+                    print(response)
+                    showAlert = true
+                }
+            }
+
+        }.resume()
+        ID = ""
     }
 }
 
