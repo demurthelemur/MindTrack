@@ -15,6 +15,7 @@ struct MainPageView: View {
     @State var isButtonEnabled: Bool = false
     @ObservedObject var reloadViewHelper = ReloadViewHelper()
     @State private var showAlert = false
+    @State var showingFullScreen = false
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -52,6 +53,9 @@ struct MainPageView: View {
                     }
                 )
             }
+            .fullScreenCover(isPresented: $showingFullScreen) {
+                StartupView()
+            }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -59,11 +63,15 @@ struct MainPageView: View {
                 }
             }
         }.onAppear() {
-            checkButtonAvailability()
-            relogin()
-            reloadViewHelper.reloadView()
+            let userState = UserDefaults.standard.bool(forKey: "userState")
+            if userState {
+                checkButtonAvailability()
+                relogin()
+                reloadViewHelper.reloadView()
+            } else {
+                showingFullScreen = true
+            }
         }
-        
     }
     
     private func takeQuiz() {

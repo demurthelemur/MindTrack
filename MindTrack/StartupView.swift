@@ -23,7 +23,3 @@ struct StartupView: View {
         }
     }
 }
-
-#Preview {
-    StartupView()
-}
