@@ -24,13 +24,13 @@ struct QuizView: View {
                 .padding()
             
             ScrollView {
-                RadioButtonQuestion(questionModel: developmentTestQuestions[0], impactPoint: $vm.question1ImpactPoint)
-                RadioButtonQuestion(questionModel: developmentTestQuestions[1], impactPoint: $vm.question2ImpactPoint)
-                RadioButtonQuestion(questionModel: developmentTestQuestions[2], impactPoint: $vm.question3ImpactPoint)
-                RadioButtonQuestion(questionModel: developmentTestQuestions[3], impactPoint: $vm.question4ImpactPoint)
-                RadioButtonQuestion(questionModel: developmentTestQuestions[4], impactPoint: $vm.question5ImpactPoint)
-                RadioButtonQuestion(questionModel: developmentTestQuestions[5], impactPoint: $vm.question6ImpactPoint)
-                RadioButtonQuestion(questionModel: developmentTestQuestions[6], impactPoint: $vm.question7ImpactPoint)
+                RadioButtonQuestion(questionModel: questions[0], impactPoint: $vm.question1ImpactPoint)
+                RadioButtonQuestion(questionModel: questions[1], impactPoint: $vm.question2ImpactPoint)
+                RadioButtonQuestion(questionModel: questions[2], impactPoint: $vm.question3ImpactPoint)
+                RadioButtonQuestion(questionModel: questions[3], impactPoint: $vm.question4ImpactPoint)
+                RadioButtonQuestion(questionModel: questions[4], impactPoint: $vm.question5ImpactPoint)
+                RadioButtonQuestion(questionModel: questions[5], impactPoint: $vm.question6ImpactPoint)
+                RadioButtonQuestion(questionModel: questions[6], impactPoint: $vm.question7ImpactPoint)
 
             }
             BigButtonWithCustomColor(action: submitQuestions, buttonText: "Submit", color: didUserSolveQuiz ? Color.gray : Color.red)
